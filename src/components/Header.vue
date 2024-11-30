@@ -10,9 +10,9 @@
           </a>
         </div>
         <div class="flex lg:hidden">
-          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white" @click="mobileMenuOpen = true">
             <span class="sr-only">Open main menu</span>
-            <Bars3Icon class="size-6" aria-hidden="true" />
+            <Bars3Icon class="size-8" aria-hidden="true" />
           </button>
         </div>
         <PopoverGroup class="hidden lg:flex lg:gap-x-12">
