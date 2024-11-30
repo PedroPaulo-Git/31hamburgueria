@@ -1,5 +1,5 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HomePage.vue'
 import HeaderHome from './components/Header.vue';
 
 </script>
@@ -9,7 +9,7 @@ import HeaderHome from './components/Header.vue';
   <div>
  
   </div>
-  <HelloWorld />
+  <HelloWorld title='O sabor que você merece,no hambúrguer que você ama!' />
 </template>
 
 <style scoped>
