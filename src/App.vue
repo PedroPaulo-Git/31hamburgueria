@@ -1,15 +1,16 @@
 <script setup>
 import HelloWorld from './components/pages/HomePage.vue'
+import About from './components/pages/About.vue';
 import HeaderHome from './components/Header.vue';
 
 </script>
 
 <template>
-  <HeaderHome />
+   <HeaderHome />
   <div>
  
-  </div>
   <HelloWorld title='O sabor que você merece,no hambúrguer que você ama!' />
+  </div>
 </template>
 
 <style scoped>

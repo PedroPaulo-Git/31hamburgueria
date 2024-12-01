@@ -1,7 +1,7 @@
 
 
 <template>
-    <header class="bg-transparent absolute w-[90%]">
+    <header class="relative w-[90%] h-26">
       <nav class="mx-auto flex max-w-7xl items-center justify-between py-11 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
