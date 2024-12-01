@@ -4,9 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
-#title{
+#title,#h1-about{
   font-family: "Protest Revolution", sans-serif;
 }
+
+
+
+
+
+
+
 *{
   font-family: "Bebas Neue", sans-serif;
   margin: 0;

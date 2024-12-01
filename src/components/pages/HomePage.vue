@@ -11,11 +11,11 @@ const count = ref(0);
 
 <template>
 
-  <div class="relative w-full">
+  <div class="relative w-full overflow-y-hidden">
 
-    <div class="h-[55rem] ">
+    <div class="h-[40rem] ">
     <div
-      class="bg-transparent absolute flex flex-col text-center items-center mt-48 xl:mt-44 sm:mt-36 h-full w-full"
+      class="bg-transparent absolute flex flex-col text-center items-center mt-12 xl:mt-44 sm:mt-36 h-full w-full"
     >
       <h1
         id="title"
