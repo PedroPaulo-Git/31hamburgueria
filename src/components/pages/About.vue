@@ -6,11 +6,11 @@
       <div class="mx-auto max-w-xl text-center">
 
         <div class="px-0 text-center ">
-        <h1 id="h1-about" class="text-3xl font-extrabold sm:text-5xl">
+        <span id="h1-about" class="text-3xl font-extrabold sm:text-5xl">
           Não vendemos apenas hambúrgueres, 
-          <h1 id="h1-about" class="text-6xl font-extrabold sm:text-5xl text-yellow31 sm:block">
+          <h1 id="h1-about" class="text-5xl font-extrabold sm:text-5xl text-yellow31 sm:block">
             entregamos experiências únicas.</h1>
-        </h1>
+          </span>
         <img
             src="../../assets/tracobanner.png"
             class="w-32 mx-auto -mt-2 mb-10"
@@ -41,7 +41,7 @@
           </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a
-            class="block w-40 rounded-full bg-yellow31 px-12 py-3 text-sm font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+            class="block w-40 rounded-full bg-yellow31 px-12 py-3 text-sm font-medium text-black shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
             href="#"
           >
             Saber Mais
