@@ -6,11 +6,11 @@
         - @tailwindcss/forms
     -->
 
-  <footer class="footercomponent">
+  <footer class="bg-white">
     <div class="mx-auto sm:px-6 lg:mx-0 lg:px-0">
-      <div class="lg:grid lg:grid-cols-2 lg:w-full lg:justify-items-end">
-        <div class="py-8 lg:py-16 lg:pe-16 lg:w-5/6">
-          <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
+      <div class="lg:flex lg:w-full lg:justify-items-end lg:h-80 ">
+        <div class="footercomponent py-8 lg:py-4 lg:pt-12 lg:pe-16 lg:w-5/6 lg:mt-auto">
+          <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-1 lg:mt-0 ">
             <img
               class="w-64 lg:w-40 -mt-10 -mb-12 mx-auto"
               src="../../assets/logo31.png"
@@ -22,7 +22,7 @@
 
               <form class="mt-4 w-full ">
                 <div
-                  class="flex mx-auto justify-between gap-2 sm:flex sm:items-center sm:gap-4 w-4/5"
+                  class="flex mx-auto justify-between gap-2 sm:flex sm:items-center sm:gap-4 lg:w-2/5 w-4/5 h-full"
                 >
                   <input
                     type="email"
@@ -31,13 +31,13 @@
                     class="w-full p-2 border-none sm:text-sm placeholder:p-2"
                   />
 
-                  <button class="w-1/2 bg-yellow31">Enviar</button>
+                  <button class="w-1/2 bg-yellow31 h-full">Enviar</button>
                 </div>
               </form>
             </div>
           </div>
 
-          <div class="mt-8 mx-4 border-t lg:border-none border-gray-100 pt-8">
+          <div class="mt-8 mx-4 border-t lg:border-none border-gray-100 pt-8 lg:pt-0 lg:mt-6 lg:flex lg:justify-between">
             <ul class="flex flex-wrap gap-4 text-xs">
               <li>
                 <a href="#" class="text-gray-100 transition hover:opacity-75">
@@ -58,13 +58,13 @@
               </li>
             </ul>
 
-            <p class="mt-8 text-xs text-gray-200">
+            <p class="mt-8 text-xs text-gray-200 lg:mt-2">
               &copy; 2022. Company Name. All rights reserved.
             </p>
           </div>
         </div>
         <div
-          class="border-b max-w-lg border-gray-100 py-8  lg:py-16 lg:pr-20 lg:pl-10 bg-yellow31"
+          class=" max-w-lg  py-8  lg:py-16 lg:pr-20 lg:pl-10  bg-yellow31 lg:h-full flex items-center "
         >
          <div class="mx-4">
             <ul class="gap-5 flex flex-col">
