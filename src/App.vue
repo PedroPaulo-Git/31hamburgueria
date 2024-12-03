@@ -2,7 +2,7 @@
 import HelloWorld from './components/pages/HomePage.vue'
 import About from './components/pages/About.vue';
 import HeaderHome from './components/Header.vue';
-
+import FooterComponent from './components/pages/FooterComponent.vue';
 </script>
 
 <template>
@@ -11,6 +11,7 @@ import HeaderHome from './components/Header.vue';
  
   <HelloWorld title='O sabor que você merece,no hambúrguer que você ama!' />
   </div>
+  <FooterComponent/>
 </template>
 
 <style scoped>

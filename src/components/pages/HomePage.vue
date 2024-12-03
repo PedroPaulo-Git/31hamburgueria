@@ -3,6 +3,7 @@ import { ref } from "vue";
 import Buttons from "../Buttons.vue";
 import About from "./About.vue";
 import OurProducts from "./OurProducts.vue";
+
 defineProps({
   title: String,
 });
@@ -38,6 +39,7 @@ const count = ref(0);
 
    <About/>
    <OurProducts/>
+
   </div>
 
   <div></div>
