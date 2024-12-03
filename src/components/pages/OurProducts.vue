@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white">
+    <div class="OurProducts ">
       <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div class="items-center text-center mb-20">
              <span id="h1-about" class="text-3xl font-extrabold sm:text-5xl">
@@ -9,8 +9,8 @@
           </span>
         </div>
        
-        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ">
-          <a v-for="product in products" :key="product.id" :href="product.href" class="group flex mx-auto relative w-9/12 ">
+        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 z-10 ">
+          <a v-for="product in products" :key="product.id" :href="product.href" class="group flex mx-auto relative w-64 bg-white">
 
             
             <div class="w-full flex">
@@ -42,6 +42,7 @@
   
   <script setup>
   import product1 from "../../assets/product1.png"
+  import './styles/OurProducts.css'
   const products = [
     {
       id: 1,
