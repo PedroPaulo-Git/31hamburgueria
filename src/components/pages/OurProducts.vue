@@ -8,7 +8,7 @@
           Conheça Nossos
           <h1
             id="h1-about"
-            class="text-7xl font-extrabold sm:text-5xl text-yellow31 sm:block"
+            class="text-7xl font-extrabold sm:text-6xl text-yellow31 sm:block"
           >
             Produtos
           </h1>
@@ -16,16 +16,16 @@
       </div>
 
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 z-10"
+        class="grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 z-10"
       >
         <a
           v-for="product in products"
           :key="product.id"
           :href="product.href"
-          class="group flex mx-auto relative w-64 bg-white"
+          class="group flex mx-auto relative w-64 bg-white shadow-lg rounded-br-3xl"
         >
           <div class="w-full flex">
-            <div class="p-2 shadow-lg rounded-br-xl flex">
+            <div class="p-2 shadow-lg rounded-br-3xl flex">
               <div class="h-40 text-right">
                 <h3
                   class="mt-4 ml-4 font-extrabold text-xl text-yellow31 text-left"
@@ -61,6 +61,13 @@
 
 <script setup>
 import product1 from "../../assets/product1.png";
+import product2 from "../../assets/product2.png";
+import product3 from "../../assets/product3.png";
+import product4 from "../../assets/product4.png";
+import product5 from "../../assets/product5.png";
+import product6 from "../../assets/product6.png";
+import product7 from "../../assets/product7.png";
+import product8 from "../../assets/product8.png";
 import "./styles/OurProducts.css";
 const products = [
   {
@@ -77,7 +84,7 @@ const products = [
     name: "Nomad Tumbler",
     href: "#",
     price: "R$35",
-    imageSrc: product1,
+    imageSrc: product2,
     imageAlt:
       "Olive drab green insulated bottle with flared screw lid and flat top.",
   },
@@ -86,7 +93,7 @@ const products = [
     name: "Focus Paper Refill",
     href: "#",
     price: "R$89",
-    imageSrc: product1,
+    imageSrc: product3,
     imageAlt: "Person using a pen to cross a task off a.",
   },
   {
@@ -94,7 +101,41 @@ const products = [
     name: "Machined Pencil",
     href: "#",
     price: "R$35",
-    imageSrc: product1,
+    imageSrc: product4,
+    imageAlt: "Hand holding black machined steel to cross a task off a.  ",
+  },
+  {
+    id: 5,
+    name: "Earthen Bottle",
+    href: "#",
+    price: "R$48",
+    imageSrc: product5,
+    imageAlt:
+      "Olive drab green insulated bottle with flared screw lid and flat top.",
+  },
+  {
+    id: 6,
+    name: "Nomad Tumbler",
+    href: "#",
+    price: "R$35",
+    imageSrc: product6,
+    imageAlt:
+      "Olive drab green insulated bottle with flared screw lid and flat top.",
+  },
+  {
+    id: 7,
+    name: "Focus Paper Refill",
+    href: "#",
+    price: "R$89",
+    imageSrc: product7,
+    imageAlt: "Person using a pen to cross a task off a.",
+  },
+  {
+    id: 8,
+    name: "Machined Pencil",
+    href: "#",
+    price: "R$35",
+    imageSrc: product8,
     imageAlt: "Hand holding black machined steel to cross a task off a.  ",
   },
   // More products...
