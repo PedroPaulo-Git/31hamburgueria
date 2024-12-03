@@ -5,18 +5,18 @@
     >
       <div class="items-center text-center mb-20">
         <span id="h1-about" class="text-3xl font-extrabold sm:text-5xl">
-          Conheça Nossos
+          Conheça Nosso
           <h1
             id="h1-about"
             class="text-7xl font-extrabold sm:text-6xl text-yellow31 sm:block"
           >
-            Produtos
+            Cardápio
           </h1>
         </span>
       </div>
 
       <div
-        class="grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 z-10"
+        class="grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-20 z-10"
       >
         <a
           v-for="product in products"

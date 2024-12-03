@@ -3,6 +3,7 @@ import { ref } from "vue";
 import Buttons from "../Buttons.vue";
 import About from "./About.vue";
 import OurProducts from "./OurProducts.vue";
+import Instagram from "./Instagram.vue";
 
 defineProps({
   title: String,
@@ -17,7 +18,7 @@ const count = ref(0);
 
     <div class="h-[40rem] lg:h-[55rem] sm:h-[40rem] ">
     <div
-      class="bg-transparent absolute flex flex-col text-center items-center mt-12 xl:mt-30 sm:mt-32 h-full w-full"
+      class="bg-transparent flex flex-col text-center items-center mt-12 xl:mt-30 sm:mt-32 h-full w-full"
     >
       <h1
         id="title"
@@ -39,6 +40,7 @@ const count = ref(0);
 
    <About/>
    <OurProducts/>
+   <Instagram/>
 
   </div>
 

@@ -7,7 +7,7 @@
     -->
 
   <footer class="bg-white">
-    <div class="mx-auto sm:px-6 lg:mx-0 lg:px-0">
+    <div class="mx-auto lg:mx-0 lg:px-0">
       <div class="lg:flex lg:w-full lg:justify-items-end lg:h-80 ">
         <div class="footercomponent py-8 lg:py-4 lg:pt-12 lg:pe-16 lg:w-5/6 lg:mt-auto">
           <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-1 lg:mt-0 ">
@@ -64,10 +64,11 @@
           </div>
         </div>
         <div
-          class=" max-w-lg  py-8  lg:py-16 lg:pr-20 lg:pl-10  bg-yellow31 lg:h-full flex items-center "
+          class=" sm:max-w-none lg:max-w-lg  py-8  lg:py-16 lg:pr-20 lg:pl-10  bg-yellow31 lg:h-full flex items-center "
         >
-         <div class="mx-4">
-            <ul class="gap-5 flex flex-col">
+         <div class="mx-4 flex">
+          
+            <ul class="gap-5 flex flex-col justify-center w-[30rem]">
                 <li class="text-black flex gap-2 max-w-64">
                     <Icon icon="ic:baseline-whatsapp" width="18" height="18" />
                     <p class="font-bold text-sm">+55 81 9 9904-9803</p>
@@ -77,11 +78,12 @@
                     <p class="font-bold text-sm">receberpedro09@gmail.com</p>
                 </li>
                 <li class="text-black flex gap-2 max-w-64">
-                    <Icon icon="icon-park-solid:local" width="18" height="18" />
+                    <Icon icon="icon-park-solid:local" width="30" height="18" />
                     <p class="font-bold text-sm">Rua Nossa Senhora do Livramento, Vertentes - PE</p>
                 </li>
 
             </ul>
+            <img src="../../assets/hamburguer1.png" class="ml-0 lg:ml-20 w-80" alt="">
          </div>
         </div>
       </div>

@@ -41,7 +41,7 @@
           </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a
-            class="block w-1/2 rounded-full bg-yellow31 px-12 py-3 text-sm font-medium text-black shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+            class="block w-38 rounded-full bg-yellow31 px-12 py-3 text-sm font-medium text-black shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
             href="#"
           >
             Saber Mais
