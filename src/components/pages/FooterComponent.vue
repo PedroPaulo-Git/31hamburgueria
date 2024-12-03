@@ -7,12 +7,12 @@
     -->
 
   <footer class="footercomponent">
-    <div class="mx-auto max-w-screen-xl sm:px-6 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2">
-        <div class="py-8 lg:py-16 lg:pe-16">
-          <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
+    <div class="mx-auto sm:px-6 lg:mx-0 lg:px-0">
+      <div class="lg:grid lg:grid-cols-2 lg:w-full lg:justify-items-end">
+        <div class="py-8 lg:py-16 lg:pe-16 lg:w-5/6">
+          <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
             <img
-              class="w-64 -mt-10 -mb-12 mx-auto"
+              class="w-64 lg:w-40 -mt-10 -mb-12 mx-auto"
               src="../../assets/logo31.png"
               alt=""
             />
@@ -37,7 +37,7 @@
             </div>
           </div>
 
-          <div class="mt-8 mx-4 border-t border-gray-100 pt-8">
+          <div class="mt-8 mx-4 border-t lg:border-none border-gray-100 pt-8">
             <ul class="flex flex-wrap gap-4 text-xs">
               <li>
                 <a href="#" class="text-gray-100 transition hover:opacity-75">
@@ -64,37 +64,33 @@
           </div>
         </div>
         <div
-          class="border-b border-gray-100 py-8 lg:order-last lg:border-b-0 lg:border-s lg:py-16 lg:ps-16 bg-yellow31"
+          class="border-b max-w-lg border-gray-100 py-8  lg:py-16 lg:pr-20 lg:pl-10 bg-yellow31"
         >
-          <div class="block text-teal-600 lg:hidden">
-            <img
-              class="w-64 -mt-10 -mb-12 mx-auto"
-              src="../../assets/logo31.png"
-              alt=""
-            />
-          </div>
+         <div class="mx-4">
+            <ul class="gap-5 flex flex-col">
+                <li class="text-black flex gap-2 max-w-64">
+                    <Icon icon="ic:baseline-whatsapp" width="18" height="18" />
+                    <p class="font-bold text-sm">+55 81 9 9904-9803</p>
+                </li>
+                <li class="text-black flex gap-2 max-w-64">
+                    <Icon icon="ic:baseline-email" width="18" height="18" />
+                    <p class="font-bold text-sm">receberpedro09@gmail.com</p>
+                </li>
+                <li class="text-black flex gap-2 max-w-64">
+                    <Icon icon="icon-park-solid:local" width="18" height="18" />
+                    <p class="font-bold text-sm">Rua Nossa Senhora do Livramento, Vertentes - PE</p>
+                </li>
 
-          <div class="mt-8 space-y-4 lg:mt-0">
-            <span class="hidden h-1 w-10 rounded bg-teal-500 lg:block"></span>
-
-            <div>
-              <h2 class="text-2xl font-medium text-gray-900">Request a Demo</h2>
-
-              <p class="mt-4 max-w-lg text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis, harum deserunt nesciunt praesentium, repellendus eum
-                perspiciatis ratione pariatur a aperiam eius numquam doloribus
-                asperiores sunt.
-              </p>
-            </div>
-          </div>
+            </ul>
+         </div>
         </div>
       </div>
     </div>
   </footer>
 </template>
-<script>
+<script setup>
 import "./styles/FooterComponent.css";
+import { Icon } from '@iconify/vue';
 </script>
 
 <style lang=""></style>
