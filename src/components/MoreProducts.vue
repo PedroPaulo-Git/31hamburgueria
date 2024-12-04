@@ -7,16 +7,14 @@
 
           <div>
             <span>ITEMS IN CART</span>
-            
-           
-            <div v-for="item in cart" v-bind:key="item.id">
-            
-              <span>id:</span>{{ item.id }}
-              <span>name:</span>{{ item.name }}
-              <span>quantity:</span>{{ item.quantity }}
-              <span>total:</span>{{ totalvalue }}
 
+            <div v-for="item in cart" v-bind:key="item.id">
+              <span>id:</span>{{ item.id }} <span>name:</span>{{ item.name }}
+              <span>quantity:</span>{{ item.quantity }}
             </div>
+            <p class="mt-4 text-lg font-semibold">
+                Total: R$ {{ totalvalue.toFixed(2) }}
+              </p>
           </div>
         </span>
       </header>
@@ -133,24 +131,40 @@ const moreFoods = [
 
 const cart = ref([]);
 let totalvalue = ref(0);
+
 const btnAdd = (food) => {
-    const item = cart.value.find((cartItem)=>cartItem.id === food.id)
-    
-  if(item){
-    item.quantity++
-    totalvalue += item.price 
-  }else{
-    cart.value.push({...food,quantity:1})
+  console.log("Adicionando item:", food.name, "Preço:", food.price);
+  const item = cart.value.find((cartItem) => cartItem.id === food.id);
+  const priceString = food.price.replace('R$', '').trim(); 
+  const price = parseFloat(priceString); 
+  if (isNaN(price)) {
+    console.error("invalid price to ", food.name);
+    return;
+  }
+
+  if (item) {
+    item.quantity++;
+    totalvalue.value += price;
+  } else {
+    cart.value.push({ ...food, quantity: 1 });
+    totalvalue.value += price;
   }
 };
 
 const btnRemove = (food) => {
-    const item = cart.value.find((cartItem)=>cartItem.id === food.id)
-    if(item && item.quantity > 1 ){
-        item.quantity--;
-    }else{
-        cart.value = cart.value.filter((item) => item.id !== food.id);
-    }
- 
+  const priceString = food.price.replace('R$', '').trim(); 
+  const price = parseFloat(priceString); 
+  if (isNaN(price)) {
+    console.error("invalid price to ", food.name);
+    return;
+  }
+  const item = cart.value.find((cartItem) => cartItem.id === food.id);
+  if (item && item.quantity > 1) {
+    item.quantity--;
+    totalvalue.value -= price;
+  } else {
+    cart.value = cart.value.filter((cartItem) => cartItem.id !== food.id);
+    totalvalue.value -= price;
+  }
 };
 </script>
