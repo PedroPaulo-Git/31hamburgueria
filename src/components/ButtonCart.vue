@@ -10,7 +10,7 @@
 
   <div
     v-if="isModalVisible"
-    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6 max-w-sm border border-gray-600 bg-gray-100 px-4 py-8 sm:px-6 lg:px-8 "
+    class="fixed z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6 max-w-sm border border-gray-600 bg-gray-100 px-4 py-8 sm:px-6 lg:px-8 "
     aria-modal="true"
     role="dialog"
     tabindex="-1"
@@ -37,9 +37,9 @@
       </svg>
     </button>
 
-    <div class="mt-4 space-y-6">
-
-      <ul v-for="food in cart"class="space-y-4">
+    <div class="mt-4 space-y-6  ">
+      <div class="overflow-y-scroll max-h-64 space-y-4 ">
+        <ul v-for="food in cart">
         <li class="flex items-center gap-4">
           <img
             :src="food.imageSrc"
@@ -65,7 +65,9 @@
         </li>
 
       </ul>
-
+      
+      
+      </div>
       <div class="space-y-4 text-center">
         <a
           href="#"
@@ -88,6 +90,7 @@
           Valor total da compra: R$200
         </a>
       </div>
+
     </div>
   </div>
 
