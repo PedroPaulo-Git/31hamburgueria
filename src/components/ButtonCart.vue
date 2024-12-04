@@ -2,9 +2,9 @@
   <div v-if="cart.length > 0">
     <div
       @click="toggleModal"
-      class="bg-black fixed right-0 bottom-0 m-10 w-20 h-20 rounded-full text-center text-white flex justify-center items-center"
+      class="bg-[#1a1919] z-10 fixed right-0 bottom-0 m-10 p-4 rounded-full text-center text-white flex justify-center items-center"
     >
-      Cart
+    <Icon icon="mdi:cart" width="30" height="30" />
     </div>
   </div>
 
@@ -38,7 +38,7 @@
     </button>
 
     <div class="mt-4 space-y-6  ">
-      <div class="overflow-y-scroll max-h-64 space-y-4 ">
+      <div class="overflow-y-auto max-h-64 space-y-4 ">
         <ul v-for="food in cart">
         <li class="flex items-center gap-4">
           <img
@@ -69,39 +69,47 @@
       
       </div>
       <div class="space-y-4 text-center">
-        <a
-          href="#"
+        <p
           class="block rounded border border-gray-600 px-5 py-3 text-sm text-gray-600 transition hover:ring-1 hover:ring-gray-400"
         >
         Valor total: R$ {{ totalvalue.toFixed(2) }}
-        </a>
+      </p>
 
         <a
-          href="#"
+        @click="toggleModalAddress"
           class="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
         >
-          Comprar
+          Continuar 
         </a>
 
         <a
-          href="#"
           class="inline-block text-sm text-gray-500 underline underline-offset-4 transition hover:text-gray-600"
         >
-          Valor total da compra: R$200
+         Limpar carrinho
         </a>
       </div>
 
     </div>
+   
   </div>
-
+  <ModalAddress v-show="isModalAddressVisible"/>
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import { ref } from "vue";
+import ModalAddress from './ModalAddress.vue';
 const isModalVisible = ref(false);
 const toggleModal = () => {
   isModalVisible.value = !isModalVisible.value;
 };
+
+const isModalAddressVisible = ref(false)
+const toggleModalAddress = ()=>{
+  isModalAddressVisible.value = !isModalAddressVisible.value
+  isModalVisible.value = false
+}
+
 const props = defineProps({
   cart: Array,
   totalvalue: Number,

@@ -26,12 +26,20 @@
                   </h3>
 
                   <div class="flex gap-2 text-white">
+
+
                     <button
                       @click="btnToAdd(food)"
                       class="bg-green-600 w-6 h-6 rounded-full flex items-center justify-center"
                     >
                       +</button
-                    >{{ food.id }}
+                    >
+
+
+                    <p class="text-black ">{{ getQuantityFoodInCart(food.id) }}</p>
+
+
+
                     <button
                       @click="removeToCart(food)"
                       class="bg-red-600 w-6 h-6 rounded-full flex items-center justify-center"
@@ -68,49 +76,49 @@ import post9 from "../assets/morefoods/insta9.jpg";
 
 const moreFoods = [
   {
-    id: 1,
+    id: 9,
     imageSrc: post1,
     name: "Explosão de Cheddar",
     price: "R$ 30,00",
   },
   {
-    id: 2,
+    id: 10,
     imageSrc: post2,
     name: "Hambúrguer BBQ Defumado",
     price: "R$ 35,00",
   },
   {
-    id: 3,
+    id: 11,
     imageSrc: post3,
     name: "Delícia Clássica de Carne",
     price: "R$ 28,00",
   },
   {
-    id: 4,
+    id: 12,
     imageSrc: post4,
     name: "Torre de Frango Crocante",
     price: "R$ 32,00",
   },
   {
-    id: 5,
+    id: 13,
     imageSrc: post5,
     name: "Fiesta Vegana",
     price: "R$ 25,00",
   },
   {
-    id: 6,
+    id: 14,
     imageSrc: post6,
     name: "Volcão Picante",
     price: "R$ 40,00",
   },
   {
-    id: 7,
+    id: 15,
     imageSrc: post7,
     name: "Smash Bacon Duplo",
     price: "R$ 45,00",
   },
   {
-    id: 8,
+    id: 16,
     imageSrc: post8,
     name: "Supremo de Alho e Ervas",
     price: "R$ 38,00",
@@ -120,6 +128,7 @@ import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
   cart: Array,
+  getQuantityFoodInCart:Function
 });
 const emit = defineEmits(["btnToAdd", "removeToCart"]);
 

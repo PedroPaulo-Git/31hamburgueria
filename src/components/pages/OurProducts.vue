@@ -51,6 +51,9 @@
                         >
                           +
                         </button>
+                        
+                        <p class="text-black ">{{ getQuantityFoodInCart(food.id) }}</p>
+
                         <button
                           @click="btnRemove(food)"
                           class="bg-red-600 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer"
@@ -59,7 +62,7 @@
                         </button>
                       </div>
                       <p
-                        class="mt-1 text-lg font-extrabold text-gray-700 text-end"
+                        class="mt-1 text-lg font-extrabold text-gray-700 text-end min-w-[40%]"
                       >
                         {{ food.price }}
                       </p>
@@ -72,7 +75,7 @@
         </a>
       </div>
     </div>
-    <MoreProducts :cart="cart" @btnToAdd="btnAdd" @removeToCart="btnRemove" />
+    <MoreProducts :getQuantityFoodInCart="getQuantityFoodInCart" :cart="cart" @btnToAdd="btnAdd" @removeToCart="btnRemove" />
     <ButtonCart :cart="cart" :totalvalue="totalvalue" />
   </div>
 </template>
@@ -96,7 +99,7 @@ const products = [
     id: 1,
     name: "Earthen Bottle",
     href: "#",
-    price: "R$ 48",
+    price: "R$48",
     imageSrc: product1,
     imageAlt:
       "Olive drab green insulated bottle with flared screw lid and flat top.",
@@ -180,7 +183,7 @@ const btnAdd = (food) => {
     item.quantity++;
     totalvalue.value += price;
   } else {
-    cart.value.push({ ...food, quantity: 1 });
+    cart.value.unshift({ ...food, quantity: 1 });
     totalvalue.value += price;
   }
   cart.value.forEach(item => {
@@ -216,4 +219,9 @@ const btnRemove = (food) => {
 });
 
 };
+
+const getQuantityFoodInCart = (id) => {
+  const food = cart.value.find((cartItem)=> cartItem.id === id);
+  return food ? food.quantity : 0;
+}
 </script>
