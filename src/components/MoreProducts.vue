@@ -7,9 +7,15 @@
 
           <div>
             <span>ITEMS IN CART</span>
+            
+           
             <div v-for="item in cart" v-bind:key="item.id">
+            
               <span>id:</span>{{ item.id }}
               <span>name:</span>{{ item.name }}
+              <span>quantity:</span>{{ item.quantity }}
+              <span>total:</span>{{ totalvalue }}
+
             </div>
           </div>
         </span>
@@ -126,14 +132,25 @@ const moreFoods = [
 ];
 
 const cart = ref([]);
-
+let totalvalue = ref(0);
 const btnAdd = (food) => {
-  if (!cart.value.some((item) => item.id === food.id)) {
-    cart.value.push(food);
+    const item = cart.value.find((cartItem)=>cartItem.id === food.id)
+    
+  if(item){
+    item.quantity++
+    totalvalue += item.price 
+  }else{
+    cart.value.push({...food,quantity:1})
   }
 };
 
 const btnRemove = (food) => {
-  cart.value = cart.value.filter((item) => item.id !== food.id);
+    const item = cart.value.find((cartItem)=>cartItem.id === food.id)
+    if(item && item.quantity > 1 ){
+        item.quantity--;
+    }else{
+        cart.value = cart.value.filter((item) => item.id !== food.id);
+    }
+ 
 };
 </script>
