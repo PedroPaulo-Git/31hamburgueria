@@ -73,7 +73,7 @@
       </div>
     </div>
     <MoreProducts :cart="cart" @btnToAdd="btnAdd" @removeToCart="btnRemove" />
-    <ButtonCart :cart="cart" />
+    <ButtonCart :cart="cart" :totalvalue="totalvalue" />
   </div>
 </template>
 
@@ -199,11 +199,16 @@ const btnRemove = (food) => {
   const item = cart.value.find((cartItem) => cartItem.id === food.id);
   if (item && item.quantity > 1) {
     item.quantity--;
-    totalvalue.value -= price;
+
   } else {
     cart.value = cart.value.filter((cartItem) => cartItem.id !== food.id);
-    totalvalue.value -= price;
   }
+
+  totalvalue.value = cart.value.reduce((total,item) => {
+    const foodprice = parseFloat(item.price.replace("R$","").trim());
+    return total + foodprice * item.quantity;
+  },0)
+
   if (totalvalue.value < 0) totalvalue.value = 0;
 
   cart.value.forEach(item => {

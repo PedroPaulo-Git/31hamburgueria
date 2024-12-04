@@ -12,7 +12,7 @@
           <li>
             <a class="group block overflow-hidden">
               <img
-                :src="food.postImg"
+                :src="food.imageSrc"
                 alt=""
                 class="h-[300px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[300px]"
               />
@@ -69,49 +69,49 @@ import post9 from "../assets/morefoods/insta9.jpg";
 const moreFoods = [
   {
     id: 1,
-    postImg: post1,
+    imageSrc: post1,
     name: "Explosão de Cheddar",
     price: "R$ 30,00",
   },
   {
     id: 2,
-    postImg: post2,
+    imageSrc: post2,
     name: "Hambúrguer BBQ Defumado",
     price: "R$ 35,00",
   },
   {
     id: 3,
-    postImg: post3,
+    imageSrc: post3,
     name: "Delícia Clássica de Carne",
     price: "R$ 28,00",
   },
   {
     id: 4,
-    postImg: post4,
+    imageSrc: post4,
     name: "Torre de Frango Crocante",
     price: "R$ 32,00",
   },
   {
     id: 5,
-    postImg: post5,
+    imageSrc: post5,
     name: "Fiesta Vegana",
     price: "R$ 25,00",
   },
   {
     id: 6,
-    postImg: post6,
+    imageSrc: post6,
     name: "Volcão Picante",
     price: "R$ 40,00",
   },
   {
     id: 7,
-    postImg: post7,
+    imageSrc: post7,
     name: "Smash Bacon Duplo",
     price: "R$ 45,00",
   },
   {
     id: 8,
-    postImg: post8,
+    imageSrc: post8,
     name: "Supremo de Alho e Ervas",
     price: "R$ 38,00",
   },

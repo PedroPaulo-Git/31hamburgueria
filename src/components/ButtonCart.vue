@@ -42,7 +42,7 @@
       <ul v-for="food in cart"class="space-y-4">
         <li class="flex items-center gap-4">
           <img
-            :src="food.postImg"
+            :src="food.imageSrc"
             alt=""
             class="size-16 rounded object-cover"
           />
@@ -71,7 +71,7 @@
           href="#"
           class="block rounded border border-gray-600 px-5 py-3 text-sm text-gray-600 transition hover:ring-1 hover:ring-gray-400"
         >
-          Valor total R$ 20,00
+        Valor total: R$ {{ totalvalue.toFixed(2) }}
         </a>
 
         <a
