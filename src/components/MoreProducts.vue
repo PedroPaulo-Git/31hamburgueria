@@ -4,18 +4,6 @@
       <header class="text-center lg:mb-20">
         <span id="h1-about" class="text-4xl font-extrabold sm:text-6xl">
           Peça outras delícias também!
-
-          <div>
-            <span>ITEMS IN CART</span>
-
-            <div v-for="item in cart" v-bind:key="item.id">
-              <span>id:</span>{{ item.id }} <span>name:</span>{{ item.name }}
-              <span>quantity:</span>{{ item.quantity }}
-            </div>
-            <p class="mt-4 text-lg font-semibold">
-                Total: R$ {{ totalvalue.toFixed(2) }}
-              </p>
-          </div>
         </span>
       </header>
 
@@ -39,13 +27,13 @@
 
                   <div class="flex gap-2 text-white">
                     <button
-                      @click="btnAdd(food)"
+                      @click="btnToAdd(food)"
                       class="bg-green-600 w-6 h-6 rounded-full flex items-center justify-center"
                     >
                       +</button
                     >{{ food.id }}
                     <button
-                      @click="btnRemove(food)"
+                      @click="removeToCart(food)"
                       class="bg-red-600 w-6 h-6 rounded-full flex items-center justify-center"
                     >
                       -
@@ -128,43 +116,18 @@ const moreFoods = [
     price: "R$ 38,00",
   },
 ];
+import { defineProps, defineEmits } from "vue";
 
-const cart = ref([]);
-let totalvalue = ref(0);
+const props = defineProps({
+  cart: Array,
+});
+const emit = defineEmits(["btnToAdd", "removeToCart"]);
 
-const btnAdd = (food) => {
-  console.log("Adicionando item:", food.name, "Preço:", food.price);
-  const item = cart.value.find((cartItem) => cartItem.id === food.id);
-  const priceString = food.price.replace('R$', '').trim(); 
-  const price = parseFloat(priceString); 
-  if (isNaN(price)) {
-    console.error("invalid price to ", food.name);
-    return;
-  }
-
-  if (item) {
-    item.quantity++;
-    totalvalue.value += price;
-  } else {
-    cart.value.push({ ...food, quantity: 1 });
-    totalvalue.value += price;
-  }
+const btnToAdd = (food) => {
+  emit("btnToAdd", food);
+};
+const removeToCart = (food) => {
+  emit("removeToCart", food);
 };
 
-const btnRemove = (food) => {
-  const priceString = food.price.replace('R$', '').trim(); 
-  const price = parseFloat(priceString); 
-  if (isNaN(price)) {
-    console.error("invalid price to ", food.name);
-    return;
-  }
-  const item = cart.value.find((cartItem) => cartItem.id === food.id);
-  if (item && item.quantity > 1) {
-    item.quantity--;
-    totalvalue.value -= price;
-  } else {
-    cart.value = cart.value.filter((cartItem) => cartItem.id !== food.id);
-    totalvalue.value -= price;
-  }
-};
 </script>
