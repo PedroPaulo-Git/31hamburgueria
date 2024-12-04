@@ -56,10 +56,12 @@
         </a>
       </div>
     </div>
+    <MoreProducts/>
   </div>
 </template>
 
 <script setup>
+import MoreProducts from "../MoreProducts.vue";
 import product1 from "../../assets/product1.png";
 import product2 from "../../assets/product2.png";
 import product3 from "../../assets/product3.png";
