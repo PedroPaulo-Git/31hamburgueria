@@ -57,11 +57,14 @@
       </div>
     </div>
     <MoreProducts/>
+    <ButtonCart/>
   </div>
+ 
 </template>
 
 <script setup>
 import MoreProducts from "../MoreProducts.vue";
+import ButtonCart from "../ButtonCart.vue";
 import product1 from "../../assets/product1.png";
 import product2 from "../../assets/product2.png";
 import product3 from "../../assets/product3.png";
@@ -71,6 +74,7 @@ import product6 from "../../assets/product6.png";
 import product7 from "../../assets/product7.png";
 import product8 from "../../assets/product8.png";
 import "./styles/OurProducts.css";
+
 const products = [
   {
     id: 1,
