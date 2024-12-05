@@ -4,7 +4,7 @@
     <header class="relative w-[90%] h-26">
       <nav class="mx-auto flex max-w-7xl items-center justify-between py-11 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
+          <a href="#" class="-m-1.5 p-1.5 ">
             <span class="sr-only">Your Company</span>
             <img class="absolute w-32 top-0 -mt-2" src="../assets/logo31.png" alt="" />
           </a>
@@ -15,11 +15,21 @@
             <Bars3Icon class="size-8" aria-hidden="true" />
           </button>
         </div>
-        <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-          <a href="#" class="text-sm/6 font-semibold text-white">Home</a>
-          <a href="#" class="text-sm/6 font-semibold text-white">Cardápio</a>
-          <a href="#" class="text-sm/6 font-semibold text-white">Sobre nós</a>
-          <a href="#" class="text-sm/6 font-semibold text-white">Contato</a>
+        <PopoverGroup class="hidden lg:flex lg:gap-x-12 items-center">
+          
+          <a href="#cardapio" class="text-sm/6 font-semibold text-white">Cardápio</a>
+          <a href="#sobre" class="text-sm/6 font-semibold text-white">Sobre nós</a>
+          <a href="#footer" class="text-sm/6 font-semibold text-white">Contato</a>
+          
+           <a
+            class="flex gap-3 rounded-full bg-yellow31 px-8 py-3 text-sm font-medium text-black shadow hover:bg-gray-900 hover:text-white focus:outline-none focus:ring active:bg-gray-900 active:text-white sm:w-auto"
+            href="#"
+          >
+            Fale Conosco
+            <span>
+              <Icon class="" icon="ic:baseline-whatsapp" width="20" height="20" />
+            </span>
+          </a>
         </PopoverGroup>
        
       </nav>
@@ -29,7 +39,7 @@
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+              <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=yellow&shade=600" alt="" />
             </a>
             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
               <span class="sr-only">Close menu</span>
@@ -64,6 +74,7 @@
   
   <script setup>
   import { ref } from 'vue'
+  import { Icon } from '@iconify/vue';
   import {
     Dialog,
     DialogPanel,

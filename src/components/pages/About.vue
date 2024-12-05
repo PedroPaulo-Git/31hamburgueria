@@ -37,11 +37,13 @@
           <img src="../../assets/traco1.png" class="w-20 -rotate-12 lg:w-40 " alt="">
           <img class="rounded-full h-28 w-full object-cover lg:h-[20rem] " src="../../assets/bannerABout.jpg" alt="">
           <p class="text-gray-600 lg:text-xl sm:text-sm text-lg mt-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laboriosam architecto minus rerum iure nisi, magnam, asperiores corrupti vero ipsum deserunt quasi excepturi dicta quisquam? Praesentium iure saepe assumenda rem.
+            Nossa hamburgueria nasceu da paixão por sabores únicos e ingredientes frescos.  
+    Aqui, cada hambúrguer é preparado com amor e pensado para oferecer uma experiência inesquecível.  
+    Venha saborear o melhor da nossa cozinha!
           </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a
-            class="block w-38 rounded-full bg-yellow31 px-12 py-3 text-sm font-medium text-black shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+            class="block w-38 rounded-full bg-yellow31 px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-900 hover:text-white focus:outline-none focus:ring active:bg-gray-900 active:text-white sm:w-auto"
             href="#"
           >
             Saber Mais

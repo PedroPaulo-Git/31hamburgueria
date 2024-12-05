@@ -72,8 +72,8 @@ import { Icon } from '@iconify/vue';
 <style>
 .icon-container {
     position: relative;
-    font-size: 2rem; /* Tamanho do emoji */
-    animation: slide 2s linear infinite; /* Animação contínua */
+    font-size: 2rem; 
+    animation: slide 2s linear infinite; 
   }
   
   @keyframes slide {

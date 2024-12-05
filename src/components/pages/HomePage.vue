@@ -16,9 +16,9 @@ const count = ref(0);
 
   <div class="relative w-full overflow-y-hidden">
 
-    <div class="h-[40rem] lg:h-[55rem] sm:h-[40rem] ">
+    <div class="h-[40rem] lg:h-[40rem] xl:h-[46rem]">
     <div
-      class="bg-transparent flex flex-col text-center items-center mt-12 xl:mt-30 sm:mt-32 h-full w-full"
+      class="bg-transparent flex flex-col text-center items-center mt-12 xl:mt-30 sm:mt-32 lg:mt-16 h-full w-full"
     >
       <h1
         id="title"

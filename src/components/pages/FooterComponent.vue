@@ -40,19 +40,19 @@
           <div class="mt-8 mx-4 border-t lg:border-none border-gray-100 pt-8 lg:pt-0 lg:mt-6 lg:flex lg:justify-between">
             <ul class="flex flex-wrap gap-4 text-xs">
               <li>
-                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                <a class="text-gray-100 transition hover:opacity-75">
                   Terms & Conditions
                 </a>
               </li>
 
               <li>
-                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                <a class="text-gray-100 transition hover:opacity-75">
                   Privacy Policy
                 </a>
               </li>
 
               <li>
-                <a href="#" class="text-gray-100 transition hover:opacity-75">
+                <a class="text-gray-100 transition hover:opacity-75">
                   Cookies
                 </a>
               </li>
