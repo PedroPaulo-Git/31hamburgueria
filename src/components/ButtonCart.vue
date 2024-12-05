@@ -92,7 +92,7 @@
     </div>
    
   </div>
-  <ModalAddress v-show="isModalAddressVisible"/>
+  <ModalAddress :cart="cart" :totalvalue="totalvalue"  v-show="isModalAddressVisible" :toggleModalAddress="toggleModalAddress"/>
 </template>
 
 <script setup>
@@ -112,7 +112,10 @@ const toggleModalAddress = ()=>{
 
 const props = defineProps({
   cart: Array,
-  totalvalue: Number,
+  totalvalue: {
+      type: String, 
+      required: true,
+    },
 });
 </script>
 <style></style>

@@ -173,7 +173,7 @@ const btnAdd = (food) => {
   console.log("Adicionando item:", food.name, "Preço:", food.price);
   const item = cart.value.find((cartItem) => cartItem.id === food.id);
   const priceString = food.price.replace("R$", "").trim();
-  const price = parseFloat(priceString);
+  const price = parseFloat(priceString.replace(",","."));
   if (isNaN(price)) {
     console.error("invalid price to ", food.name);
     return;
@@ -219,7 +219,11 @@ const btnRemove = (food) => {
 });
 
 };
+const formatCurrency = (value) => {
+  return `R$ ${value.toFixed(2).replace(".", ",")}`;
+};
 
+const getTotalValueFormatted = () => formatCurrency(totalvalue.value);
 const getQuantityFoodInCart = (id) => {
   const food = cart.value.find((cartItem)=> cartItem.id === id);
   return food ? food.quantity : 0;

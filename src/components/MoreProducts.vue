@@ -79,7 +79,7 @@ const moreFoods = [
     id: 9,
     imageSrc: post1,
     name: "Explosão de Cheddar",
-    price: "R$ 30,00",
+    price: "R$ 30,20",
   },
   {
     id: 10,
