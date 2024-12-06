@@ -2,7 +2,7 @@
   <div v-if="cart.length > 0">
     <div
       @click="toggleModal"
-      class="bg-[#1a1919] cursor-pointer z-10 fixed right-0 bottom-0 m-10 p-4 rounded-full text-center text-white flex justify-center items-center"
+      class="bg-yellow31 cursor-pointer z-10 fixed right-0 bottom-0 m-10 p-4 rounded-full text-center text-[#1a1919] flex justify-center items-center"
     >
       <Icon icon="mdi:cart" width="30" height="30" />
     </div>
@@ -157,13 +157,15 @@ const props = defineProps({
 });
 </script>
 <style scoped>
+
 .cart-message-animation {
+  z-index: 2;
   position: fixed;
   bottom: 120px; 
-  right: 15px; 
+  right: 18px; 
   background-color: #fbbf24; 
   color: #1a1919;
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: 12px;
   font-size: 14px;
   font-weight: bold;
@@ -185,7 +187,13 @@ const props = defineProps({
   border-top: 10px solid #fbbf24; 
 }
 
-
+@media screen and (max-width: 420px) {
+  .cart-message-animation {
+    padding: 5px 10px;
+    right: 27px; 
+    font-size: 12px;
+  }
+}
 @keyframes verticalBounce {
   0%, 100% {
     transform: translateY(0);

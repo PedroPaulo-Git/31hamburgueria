@@ -30,10 +30,7 @@
     <form action="">
       <div>
         <div class="mb-10 mt-5">
-          <label
-            for="UserEmail"
-            class="block text-xs font-medium text-gray-700"
-          >
+          <label class="block text-xs font-medium text-gray-700">
             Nome Completo:
           </label>
 
@@ -47,10 +44,7 @@
           />
           <div class="grid grid-cols-[3fr_1fr] gap-3">
             <div class="">
-              <label
-                for="UserEmail"
-                class="block text-xs font-medium text-gray-700"
-              >
+              <label class="block text-xs font-medium text-gray-700">
                 Endereço:
               </label>
 
@@ -64,10 +58,7 @@
               />
             </div>
             <div class="">
-              <label
-                for="UserEmail"
-                class="block text-xs font-medium text-gray-700"
-              >
+              <label class="block text-xs font-medium text-gray-700">
                 Número:
               </label>
 
@@ -82,10 +73,7 @@
             </div>
           </div>
 
-          <label
-            for="UserEmail"
-            class="block text-xs font-medium text-gray-700"
-          >
+          <label class="block text-xs font-medium text-gray-700">
             Ponto de referência:
           </label>
 
@@ -97,10 +85,7 @@
             class="p-2 mt-1 mb-5 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
             required
           />
-          <label
-            for="UserEmail"
-            class="block text-xs font-medium text-gray-700"
-          >
+          <label class="block text-xs font-medium text-gray-700">
             Complementos
           </label>
 
@@ -112,10 +97,7 @@
             class="p-2 mt-1 mb-5 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
           />
           <Listbox as="div" v-model="selected">
-            <label
-              for="UserEmail"
-              class="block text-xs font-medium text-gray-700"
-            >
+            <label class="block text-xs font-medium text-gray-700">
               Forma de Pagamento
             </label>
             <div class="relative mt-2">
@@ -222,8 +204,7 @@ const userDetails = ref({
   address: "",
   numberHouse: "",
   referenceLocal: "",
-  complements:""
-
+  complements: "",
 });
 const completeOrder = () => {
   if (
@@ -252,7 +233,11 @@ const completeOrder = () => {
     `Ponto de Referência: ${userDetails.value.referenceLocal}\n\n` +
     `*Itens do Pedido:*\n` +
     `${cartItems}\n\n` +
-    `${userDetails.value.complements ? `*Complementos:* ${userDetails.value.complements}\n` : ''}` +
+    `${
+      userDetails.value.complements
+        ? `*Complementos:* ${userDetails.value.complements}\n`
+        : ""
+    }` +
     `*Forma de Pagamento:* ${paymentSelected}\n` +
     `*Valor Total:* ${formatCurrency(props.totalvalue)}\n`;
 

@@ -146,14 +146,8 @@ const props = defineProps({
 const emit = defineEmits(["btnToAdd", "removeToCart"]);
 
 const btnToAdd = (food) => {
-  const itemExisting = props.cart.find(
-    (item) => item.id === food.id && item.sabor === food.sabor
-  );
-  if (itemExisting) {
-    itemExisting.quantity = +1;
-  } else {
-    emit("btnToAdd", { ...food, quantity: 1 });
-  }
+    emit("btnToAdd",food);
+
 };
 const removeToCart = (food) => {
   emit("removeToCart", food);
