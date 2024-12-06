@@ -135,10 +135,11 @@ const promotions = [
 
 const talkToUs = () => {
   const phoneNumber = "5581999049803";
-  const TirarDuvida = `https://wa.me/${phoneNumber}?text=Olá, gostaria de tirar uma dúvida sobre o meu pedido. Pode me ajudar?`;
+  const EntrarContato = `https://wa.me/${phoneNumber}?text=Olá, gostaria de falar com vocês. Estou entrando em contato para conversar.`;
+
 
   // Abre o WhatsApp com a mensagem
-  window.open(TirarDuvida, "_blank");
+  window.open(EntrarContato, "_blank");
 };
   
   const mobileMenuOpen = ref(false)
