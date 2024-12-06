@@ -52,6 +52,7 @@
               />
 
               <div>
+                
                 <h3 class="text-sm text-gray-900">{{ food.name }}</h3>
 
                 <dl class="mt-0.5 space-y-px text-[10px] text-gray-600">

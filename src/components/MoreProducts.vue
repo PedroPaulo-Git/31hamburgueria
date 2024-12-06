@@ -7,7 +7,9 @@
         </span>
       </header>
 
-      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:mb-10">
+      <ul
+        class="relative mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:mb-10"
+      >
         <div v-for="food in moreFoods" v-bind:key="food.id">
           <li>
             <a class="group block overflow-hidden">
@@ -26,19 +28,16 @@
                   </h3>
 
                   <div class="flex gap-2 text-white">
-
-
                     <button
-                      @click="btnToAdd(food)"
+                      @click="addFoodVerify(food)"
                       class="bg-green-600 w-6 h-6 rounded-full flex items-center justify-center"
                     >
-                      +</button
-                    >
+                      +
+                    </button>
 
-
-                    <p class="text-black ">{{ getQuantityFoodInCart(food.id) }}</p>
-
-
+                    <p class="text-black">
+                      {{ getQuantityFoodInCart(food.id) }}
+                    </p>
 
                     <button
                       @click="removeToCart(food)"
@@ -78,65 +77,123 @@ const moreFoods = [
   {
     id: 9,
     imageSrc: post1,
-    name: "Explosão de Cheddar",
+    name: "Pão com Cheddar e Carne",
     price: "R$ 30,20",
+    description:
+      "Pão artesanal recheado com carne suculenta e cheddar cremoso.",
   },
   {
     id: 10,
     imageSrc: post2,
-    name: "Hambúrguer BBQ Defumado",
-    price: "R$ 35,00",
+    name: "Brownie com Sorvete",
+    price: "R$ 20,00",
+    description:
+      "Brownie de chocolate servido com uma bola de sorvete de creme.",
   },
   {
     id: 11,
     imageSrc: post3,
-    name: "Delícia Clássica de Carne",
-    price: "R$ 28,00",
+    name: "Combo Batata e Molho",
+    price: "R$ 15,00",
+    description:
+      "Porção de batatas fritas crocantes acompanhadas de molho especial.",
   },
   {
     id: 12,
     imageSrc: post4,
-    name: "Torre de Frango Crocante",
-    price: "R$ 32,00",
+    name: "Barca de Delícias",
+    price: "R$ 45,00",
+    description:
+      "Hambúrguer, nuggets, batatas fritas e molho cheddar em uma barca.",
   },
   {
     id: 13,
     imageSrc: post5,
-    name: "Fiesta Vegana",
-    price: "R$ 25,00",
+    name: "Esfirra Tradicional (Frango)",
+    price: "R$ 10,00",
+    description: "Esfirra de carne bem temperada, assada na hora.",
   },
   {
     id: 14,
     imageSrc: post6,
-    name: "Volcão Picante",
-    price: "R$ 40,00",
+    name: "Pastel Recheado (Carne)",
+    price: "R$ 12,00",
+    description: "Pastel crocante com recheio generoso de queijo e presunto.",
   },
   {
     id: 15,
     imageSrc: post7,
-    name: "Smash Bacon Duplo",
-    price: "R$ 45,00",
+    name: "Pastel Empanado (Misto)",
+    price: "R$ 14,00",
+    description:
+      "Pastel frito com camada crocante de empanado e recheio saboroso.",
   },
   {
     id: 16,
     imageSrc: post8,
-    name: "Supremo de Alho e Ervas",
-    price: "R$ 38,00",
+    name: "Empada Cremosa",
+    price: "R$ 8,00",
+    description: "Empada recheada com frango cremoso e temperos especiais.",
   },
 ];
+
 import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
   cart: Array,
-  getQuantityFoodInCart:Function
+  getQuantityFoodInCart: Function,
 });
 const emit = defineEmits(["btnToAdd", "removeToCart"]);
 
 const btnToAdd = (food) => {
-  emit("btnToAdd", food);
+  const itemExisting = props.cart.find(
+    (item) => item.id === food.id && item.sabor === food.sabor
+  );
+  if (itemExisting) {
+    itemExisting.quantity = +1;
+  } else {
+    emit("btnToAdd", { ...food, quantity: 1 });
+  }
+  // const itemToAdd = {...food };
+  // if(selectedFood.value && selectedFood.value.id === food.id){
+  //   itemToAdd.sabor = selectedFood.value.sabor;
+  // }
+  // emit("btnToAdd", itemToAdd);
 };
 const removeToCart = (food) => {
   emit("removeToCart", food);
 };
 
+const showModal = ref(null);
+const selectedFood = ref(null);
+
+const toggleCloseModal = () => {
+  showModal.value = null;
+  selectedFood.value = null;
+};
+const addFoodVerify = (food) => {
+  if (showModal) {
+    console.log(showModal);
+  }
+  if (food.sabores) {
+    selectedFood.value = { ...food };
+    showModal.value = food.id;
+  } else {
+    btnToAdd(food);
+  }
+};
+
+const selectSabor = (sabor) => {
+  if (selectedFood.value) {
+    const FoodWithSabor = { ...selectedFood.value, sabor }; 
+    console.log(
+      "SABOR SELECIONADO:",
+      sabor,
+      "da comida:",
+      selectedFood.value.name,
+
+    );
+    btnToAdd(FoodWithSabor); 
+  }
+};
 </script>

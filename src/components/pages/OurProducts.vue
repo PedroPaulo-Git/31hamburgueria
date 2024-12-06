@@ -97,74 +97,70 @@ import "./styles/OurProducts.css";
 const products = [
   {
     id: 1,
-    name: "Earthen Bottle",
+    name: "Classic Burger",
     href: "#",
-    price: "R$48",
+    price: "R$40",
     imageSrc: product1,
-    imageAlt:
-      "Olive drab green insulated bottle with flared screw lid and flat top.",
+    imageAlt: "Um hambúrguer clássico com queijo, alface e tomate.",
   },
   {
     id: 2,
-    name: "Nomad Tumbler",
+    name: "Black Bun Burger",
     href: "#",
-    price: "R$35",
+    price: "R$42",
     imageSrc: product2,
-    imageAlt:
-      "Olive drab green insulated bottle with flared screw lid and flat top.",
+    imageAlt: "Um hambúrguer gourmet com pão preto, queijo suíço e cebola roxa.",
   },
   {
     id: 3,
-    name: "Focus Paper Refill",
+    name: "Cheddar Deluxe",
     href: "#",
-    price: "R$89",
+    price: "R$39",
     imageSrc: product3,
-    imageAlt: "Person using a pen to cross a task off a.",
+    imageAlt: "Hambúrguer com cheddar derretido, bacon crocante e molho especial.",
   },
   {
     id: 4,
-    name: "Machined Pencil",
+    name: "Spicy Jalapeño",
     href: "#",
-    price: "R$35",
+    price: "R$41",
     imageSrc: product4,
-    imageAlt: "Hand holding black machined steel to cross a task off a.  ",
+    imageAlt: "Um hambúrguer apimentado com jalapeños e maionese picante.",
   },
   {
     id: 5,
-    name: "Earthen Bottle",
+    name: "BBQ Bacon Burger",
     href: "#",
-    price: "R$48",
+    price: "R$43",
     imageSrc: product5,
-    imageAlt:
-      "Olive drab green insulated bottle with flared screw lid and flat top.",
+    imageAlt: "Hambúrguer com molho barbecue, bacon defumado e cebola caramelizada.",
   },
   {
     id: 6,
-    name: "Nomad Tumbler",
+    name: "Veggie Delight",
     href: "#",
-    price: "R$35",
+    price: "R$38",
     imageSrc: product6,
-    imageAlt:
-      "Olive drab green insulated bottle with flared screw lid and flat top.",
+    imageAlt: "Hambúrguer vegetariano com grão-de-bico, alface e abacate.",
   },
   {
     id: 7,
-    name: "Focus Paper Refill",
+    name: "Egg Burger",
     href: "#",
-    price: "R$89",
+    price: "R$40",
     imageSrc: product7,
-    imageAlt: "Person using a pen to cross a task off a.",
+    imageAlt: "Hambúrguer com ovo frito, queijo derretido e molho especial.",
   },
   {
     id: 8,
-    name: "Machined Pencil",
+    name: "Chicken Burger",
     href: "#",
-    price: "R$35",
+    price: "R$39",
     imageSrc: product8,
-    imageAlt: "Hand holding black machined steel to cross a task off a.  ",
+    imageAlt: "Hambúrguer de frango empanado, alface crocante e maionese caseira.",
   },
-  // More products...
 ];
+
 
 const cart = ref([]);
 let totalvalue = ref(0);

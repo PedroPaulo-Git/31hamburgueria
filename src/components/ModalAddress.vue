@@ -97,6 +97,20 @@
             class="p-2 mt-1 mb-5 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
             required
           />
+          <label
+            for="UserEmail"
+            class="block text-xs font-medium text-gray-700"
+          >
+            Complementos
+          </label>
+
+          <input
+            v-model="userDetails.complements"
+            type="text"
+            id="complementos"
+            placeholder="Ex: Sabores, Adicionais (Sem Ketchup, Cebola, etc.)"
+            class="p-2 mt-1 mb-5 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+          />
           <Listbox as="div" v-model="selected">
             <label
               for="UserEmail"
@@ -180,7 +194,6 @@
           </a>
 
           <a
-
             @click.prevent="toggleDuvida"
             class="inline-block cursor-pointer text-sm text-gray-400 underline underline-offset-4 transition"
           >
@@ -209,6 +222,8 @@ const userDetails = ref({
   address: "",
   numberHouse: "",
   referenceLocal: "",
+  complements:""
+
 });
 const completeOrder = () => {
   if (
@@ -237,18 +252,15 @@ const completeOrder = () => {
     `Ponto de Referência: ${userDetails.value.referenceLocal}\n\n` +
     `*Itens do Pedido:*\n` +
     `${cartItems}\n\n` +
-    `*Forma de Pagamento:* ${paymentSelected}\n`+
+    `${userDetails.value.complements ? `*Complementos:* ${userDetails.value.complements}\n` : ''}` +
+    `*Forma de Pagamento:* ${paymentSelected}\n` +
     `*Valor Total:* ${formatCurrency(props.totalvalue)}\n`;
 
   const encodedMessage = encodeURIComponent(message.trim());
   const phoneNumber = "5581999049803";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   window.open(whatsappUrl, "_blank");
-  
-  
-  
-  
-  
+
   console.log("Cart:", JSON.parse(JSON.stringify(props.cart)));
   console.log("valor total cart", props.totalvalue);
   console.log("User Details:", userDetails.value);
@@ -256,10 +268,10 @@ const completeOrder = () => {
 const toggleDuvida = () => {
   const phoneNumber = "5581999049803";
   const TirarDuvida = `https://wa.me/${phoneNumber}?text=Olá, gostaria de tirar uma dúvida sobre o meu pedido. Pode me ajudar?`;
-  
+
   // Abre o WhatsApp com a mensagem
-  window.open(TirarDuvida, '_blank');
-}
+  window.open(TirarDuvida, "_blank");
+};
 
 import {
   Listbox,
