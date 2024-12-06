@@ -201,7 +201,6 @@ const props = defineProps({
 });
 
 const closeModal = () => {
-  // Chama a função passada por prop para fechar o modal
   props.toggleModalAddress();
 };
 

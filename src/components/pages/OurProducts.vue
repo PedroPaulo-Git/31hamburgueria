@@ -76,7 +76,7 @@
       </div>
     </div>
     <MoreProducts :getQuantityFoodInCart="getQuantityFoodInCart" :cart="cart" @btnToAdd="btnAdd" @removeToCart="btnRemove" />
-    <ButtonCart :cart="cart" :totalvalue="totalvalue" />
+    <ButtonCart :cart="cart" :totalvalue="totalvalue" @clear-cart="clearCart" />
   </div>
 </template>
 
@@ -221,6 +221,11 @@ const btnRemove = (food) => {
 };
 const formatCurrency = (value) => {
   return `R$ ${value.toFixed(2).replace(".", ",")}`;
+};
+
+const clearCart = () => {
+  cart.value = []
+  totalvalue.value = 0
 };
 
 const getTotalValueFormatted = () => formatCurrency(totalvalue.value);
