@@ -82,7 +82,7 @@
               
             </div>
           </div>
-          <span class=" absolute bottom-0 right-0 mr-4 mb-2 text-sm flex gap-1 font-bold text-gray-500">Desenvolvido por <a href="https://pedrodevofc.vercel.app/" target="blank" class=" text-black cursor-pointer font-extrabold"> Pedro</a></span>
+          <span class=" absolute bottom-0 right-0 mr-4 mb-2 text-sm flex gap-1 font-bold text-gray-500">Desenvolvido por <a href="https://pedrodevofc.vercel.app/" target="blank" class=" text-black cursor-pointer font-extrabold underline"> Pedro</a></span>
         </DialogPanel>
       </Dialog>
     </header>
@@ -111,7 +111,7 @@
     SquaresPlusIcon,
     XMarkIcon,
   } from '@heroicons/vue/24/outline'
-  import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
+  import { ChevronDownIcon} from '@heroicons/vue/20/solid'
 
   const openingHours = [
   { 
