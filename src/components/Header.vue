@@ -19,10 +19,10 @@
           
           <a href="#cardapio" class="text-sm/6 font-semibold text-white">Cardápio</a>
           <a href="#sobre" class="text-sm/6 font-semibold text-white">Sobre nós</a>
-          <a href="#footer" class="text-sm/6 font-semibold text-white">Contato</a>
+          <a href="#footer" class="text-sm/6 font-semibold text-white">Siga-nos</a>
           
            <a
-            class="flex gap-3 rounded-full bg-yellow31 px-8 py-3 text-sm font-medium text-black shadow hover:bg-gray-900 hover:text-white focus:outline-none focus:ring active:bg-gray-900 active:text-white sm:w-auto"
+            class="flex gap-3 rounded-full bg-yellow31 px-8 py-3 text-sm font-medium text-black shadow hover:bg-[#171a1d] hover:text-white focus:outline-none focus:ring active:bg-gray-900 active:text-white sm:w-auto"
             href="#"
           >
             Fale Conosco
@@ -39,7 +39,7 @@
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=yellow&shade=600" alt="" />
+              <img class="h-28 w-32 -my-6 -ml-4 " src="../assets/logo31_3.png" alt="" />
             </a>
             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
               <span class="sr-only">Close menu</span>
@@ -51,20 +51,34 @@
               <div class="space-y-2 py-6">
                 <Disclosure as="div" class="-mx-3" v-slot="{ open }">
                   <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
-                    Product
+                    <span class="flex gap-3 items-center text-center"><Icon icon="tabler:clock" width="24" height="24" />Horários</span>
                     <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'size-5 flex-none']" aria-hidden="true" />
                   </DisclosureButton>
                   <DisclosurePanel class="mt-2 space-y-2">
-                    <DisclosureButton v-for="item in [...products, ...callsToAction]" :key="item.name" as="a" :href="item.href" class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{{ item.name }}</DisclosureButton>
+                    <DisclosureButton v-for="item in [...openingHours]" :key="item.day" as="a"  class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{{ item.day }}<span class="font-bold">{{ item.hours }}</span></DisclosureButton>
                   </DisclosurePanel>
                 </Disclosure>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Features</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Marketplace</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
+                <Disclosure as="div" class="-mx-3" v-slot="{ open }">
+                  <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                    <span class="flex gap-3 items-center text-center"><Icon icon="lsicon:badge-promotion-outline" width="24" height="24" />Promoções</span>
+                    <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'size-5 flex-none']" aria-hidden="true" />
+                  </DisclosureButton>
+                  <DisclosurePanel class="mt-2 space-y-2">
+                    <DisclosureButton v-for="item in [...openingHours]" :key="item.day" as="a"  class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{{ item.day }}<span class="font-bold">{{ item.hours }}</span></DisclosureButton>
+                  </DisclosurePanel>
+                </Disclosure>
+                
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sobre nós</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Cardápio</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Siga-nos</a>
               </div>
               <div class="py-6">
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+                <a href="#" class="flex items-center gap-4 -mx-3 rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Fale Conosco <Icon class="" icon="ic:baseline-whatsapp" width="20" height="20" /></a>
+                <a href="#" class="flex items-center gap-4 -mx-3 rounded-lg px-3 py-2.5 text-gray-600 text-xs"><Icon icon="icon-park-solid:local" width="20" height="18" />Vertentes - PE  | Rua Nossa Senhora do Livramento</a>
+              
+              
               </div>
+              
             </div>
           </div>
         </DialogPanel>
@@ -96,18 +110,37 @@
     XMarkIcon,
   } from '@heroicons/vue/24/outline'
   import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
-  
-  const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-  ]
-  const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-  ]
+
+  const openingHours = [
+  { 
+    day: '- Quarta a Sexta das ', 
+    hours: '18:00 às 22:00', 
+  },
+  { 
+    day: '- Sábado das ', 
+    hours: '18:00 às 23:00', 
+  },
+  { 
+    day: '- Domingo das ', 
+    hours: '17:00 às 23:00', 
+  },
+]
+
+const promotions = [
+  { 
+    day: '- Quarta a Sexta das ', 
+    hours: '18:00 às 22:00', 
+  },
+  { 
+    day: '- Sábado das ', 
+    hours: '18:00 às 23:00', 
+  },
+  { 
+    day: '- Domingo das ', 
+    hours: '17:00 às 23:00', 
+  },
+]
+
   
   const mobileMenuOpen = ref(false)
   </script>
