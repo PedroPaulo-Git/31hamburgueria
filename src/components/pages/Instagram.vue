@@ -3,7 +3,7 @@
 
 
 <template >
-    <div class="flex py-20 pb-28 lg:py-44 bg-white items-center ">
+    <div id="insta" class="flex py-20 pb-28 lg:py-44 bg-white items-center ">
 
    
     <div class="flex overflow-x-hidden flex-col-reverse lg:flex-row">

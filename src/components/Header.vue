@@ -19,11 +19,12 @@
           
           <a href="#cardapio" class="text-sm/6 font-semibold text-white">Cardápio</a>
           <a href="#sobre" class="text-sm/6 font-semibold text-white">Sobre nós</a>
-          <a href="#footer" class="text-sm/6 font-semibold text-white">Siga-nos</a>
+          <a href="#insta" class="text-sm/6 font-semibold text-white">Siga-nos</a>
+          <a href="#footer" class="text-sm/6 font-semibold text-white">Horários</a>
           
            <a
+           @click="talkToUs"
             class="flex gap-3 rounded-full bg-yellow31 px-8 py-3 text-sm font-medium text-black shadow hover:bg-[#171a1d] hover:text-white focus:outline-none focus:ring active:bg-gray-900 active:text-white sm:w-auto"
-            href="#"
           >
             Fale Conosco
             <span>
@@ -141,6 +142,13 @@ const promotions = [
   },
 ]
 
+const talkToUs = () => {
+  const phoneNumber = "5581999049803";
+  const TirarDuvida = `https://wa.me/${phoneNumber}?text=Olá, gostaria de tirar uma dúvida sobre o meu pedido. Pode me ajudar?`;
+
+  // Abre o WhatsApp com a mensagem
+  window.open(TirarDuvida, "_blank");
+};
   
   const mobileMenuOpen = ref(false)
   </script>

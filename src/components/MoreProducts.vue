@@ -154,11 +154,6 @@ const btnToAdd = (food) => {
   } else {
     emit("btnToAdd", { ...food, quantity: 1 });
   }
-  // const itemToAdd = {...food };
-  // if(selectedFood.value && selectedFood.value.id === food.id){
-  //   itemToAdd.sabor = selectedFood.value.sabor;
-  // }
-  // emit("btnToAdd", itemToAdd);
 };
 const removeToCart = (food) => {
   emit("removeToCart", food);

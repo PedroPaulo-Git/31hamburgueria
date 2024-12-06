@@ -1,7 +1,7 @@
 
 
 <template>
-  <section class="bg-gray-50 sm:py-6 lg:py-60">
+  <section id="sobre" class="bg-gray-50 sm:py-6 lg:py-60">
     <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
       <div class="sm:mx-auto max-w-xl text-center lg:max-w-full lg:mx-32">
 

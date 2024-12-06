@@ -269,7 +269,6 @@ const toggleDuvida = () => {
   const phoneNumber = "5581999049803";
   const TirarDuvida = `https://wa.me/${phoneNumber}?text=Olá, gostaria de tirar uma dúvida sobre o meu pedido. Pode me ajudar?`;
 
-  // Abre o WhatsApp com a mensagem
   window.open(TirarDuvida, "_blank");
 };
 
