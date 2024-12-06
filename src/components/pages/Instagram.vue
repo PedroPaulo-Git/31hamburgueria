@@ -20,7 +20,7 @@
                 id="h1-about" class="text-5xl ml-4 lg:ml-12 font-bold">Siga-nos no Instagram e descubra</h1>
                 <h1
                 id="h1-about" class="text-4xl mb-5 lg:mb-2 ml-4 lg:ml-12 font-bold text-yellow31">nossos sabores! 🍔📸</h1>
-                <a class="flex gap-5 items-center">
+                <a href="https://www.instagram.com/31hamburgueria/" target="blank" class="flex gap-5 items-center">
                     <h1
                     id="h1-about" class="text-2xl ml-4 lg:ml-12 font-extrabold underline cursor-pointer ">@31hamburgueria</h1>
                     <span class="icon-container mb-2">👈 </span>

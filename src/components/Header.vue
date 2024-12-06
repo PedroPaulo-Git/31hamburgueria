@@ -51,12 +51,12 @@
             <div class="-my-6 divide-y divide-gray-500/10">
               <div class="space-y-2 py-6">
                 <Disclosure as="div" class="-mx-3" v-slot="{ open }">
-                  <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                  <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/5 font-semibold text-gray-900 hover:bg-gray-50">
                     <span class="flex gap-3 items-center text-center"><Icon icon="tabler:clock" width="24" height="24" />Horários</span>
                     <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'size-5 flex-none']" aria-hidden="true" />
                   </DisclosureButton>
                   <DisclosurePanel class="mt-2 space-y-2">
-                    <DisclosureButton v-for="item in [...openingHours]" :key="item.day" as="a"  class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{{ item.day }}<span class="font-bold">{{ item.hours }}</span></DisclosureButton>
+                    <DisclosureButton v-for="item in [...openingHours]" :key="item.day" as="a"  class="block rounded-lg py-2 pl-6 pr-3 text-sm/5 font-semibold text-gray-700 hover:bg-gray-50">- {{ item.day }}<span class="font-bold text-gray-900">{{ item.hours }}</span></DisclosureButton>
                   </DisclosurePanel>
                 </Disclosure>
                 <Disclosure as="div" class="-mx-3" v-slot="{ open }">
@@ -64,24 +64,25 @@
                     <span class="flex gap-3 items-center text-center"><Icon icon="lsicon:badge-promotion-outline" width="24" height="24" />Promoções</span>
                     <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'size-5 flex-none']" aria-hidden="true" />
                   </DisclosureButton>
-                  <DisclosurePanel class="mt-2 space-y-2">
-                    <DisclosureButton v-for="item in [...openingHours]" :key="item.day" as="a"  class="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">{{ item.day }}<span class="font-bold">{{ item.hours }}</span></DisclosureButton>
+                  <DisclosurePanel class="mt-2 space-y-0">
+                    <DisclosureButton v-for="promo in [...promotions]" :key="promo.day" as="a"  class="block rounded-lg py-2 pl-6 pr-3 text-sm/5 font-semibold text-gray-700 hover:bg-gray-50">• {{ promo.day }}<span class="font-bold text-gray-900"> | {{ promo.description }}</span></DisclosureButton>
                   </DisclosurePanel>
                 </Disclosure>
                 
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sobre nós</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Cardápio</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Siga-nos</a>
+                <a @click="mobileMenuOpen = false" href="#sobre" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Sobre nós</a>
+                <a @click="mobileMenuOpen = false" href="#cardapio" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Cardápio</a>
+                <a @click="mobileMenuOpen = false" href="#insta" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Siga-nos</a>
               </div>
               <div class="py-6">
-                <a href="#" class="flex items-center gap-4 -mx-3 rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Fale Conosco <Icon class="" icon="ic:baseline-whatsapp" width="20" height="20" /></a>
-                <a href="#" class="flex items-center gap-4 -mx-3 rounded-lg px-3 py-2.5 text-gray-600 text-xs"><Icon icon="icon-park-solid:local" width="20" height="18" />Vertentes - PE  | Rua Nossa Senhora do Livramento</a>
+                <a @click="talkToUs" class="flex items-center gap-4 -mx-3 rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Fale Conosco <Icon class="" icon="ic:baseline-whatsapp" width="20" height="20" /></a>
+                <a class="flex items-center gap-4 -mx-3 rounded-lg px-3 py-2.5 text-gray-600 text-xs"><Icon icon="icon-park-solid:local" width="20" height="18" />Vertentes - PE  | Rua Nossa Senhora do Livramento</a>
               
               
               </div>
               
             </div>
           </div>
+          <span class=" absolute bottom-0 right-0 mr-4 mb-2 text-sm flex gap-1 font-bold text-gray-500">Desenvolvido por <a href="https://pedrodevofc.vercel.app/" target="blank" class=" text-black cursor-pointer font-extrabold"> Pedro</a></span>
         </DialogPanel>
       </Dialog>
     </header>
@@ -114,32 +115,22 @@
 
   const openingHours = [
   { 
-    day: '- Quarta a Sexta das ', 
+    day: 'Quarta a Sexta das ', 
     hours: '18:00 às 22:00', 
   },
   { 
-    day: '- Sábado das ', 
+    day: 'Sábado das ', 
     hours: '18:00 às 23:00', 
   },
   { 
-    day: '- Domingo das ', 
+    day: 'Domingo das ', 
     hours: '17:00 às 23:00', 
   },
 ]
 
 const promotions = [
-  { 
-    day: '- Quarta a Sexta das ', 
-    hours: '18:00 às 22:00', 
-  },
-  { 
-    day: '- Sábado das ', 
-    hours: '18:00 às 23:00', 
-  },
-  { 
-    day: '- Domingo das ', 
-    hours: '17:00 às 23:00', 
-  },
+  { day: 'Quarta', description: 'Desconto de 10% no primeiro pedido.' },
+  { day: 'Domingo', description: 'Sobremesa grátis para pedidos acima de R$50.' },
 ]
 
 const talkToUs = () => {

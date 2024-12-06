@@ -65,7 +65,7 @@
             </ul>
 
             <p class="mt-8 text-xs text-gray-200 lg:mt-2">
-              &copy; 2022. Company Name. All rights reserved.
+              &copy; 2024. devpedroofc. All rights reserved.
             </p>
           </div>
         </div>

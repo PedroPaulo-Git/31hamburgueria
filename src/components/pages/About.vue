@@ -41,14 +41,14 @@
     Aqui, cada hambúrguer é preparado com amor e pensado para oferecer uma experiência inesquecível.  
     Venha saborear o melhor da nossa cozinha!
           </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <!-- <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a
+            href="https://www.instagram.com/31hamburgueria/" target="blank"
             class="block w-38 rounded-full bg-yellow31 px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-900 hover:text-white focus:outline-none focus:ring active:bg-gray-900 active:text-white sm:w-auto"
-            href="#"
           >
             Saber Mais
           </a>
-        </div>
+        </div> -->
         </div>
      
       </div>

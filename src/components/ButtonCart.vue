@@ -6,6 +6,9 @@
     >
       <Icon icon="mdi:cart" width="30" height="30" />
     </div>
+    <div class="cart-message-animation">
+      Ver Carrinho
+    </div>
   </div>
   <div
     v-if="isModalVisible"
@@ -153,4 +156,42 @@ const props = defineProps({
   },
 });
 </script>
-<style></style>
+<style scoped>
+.cart-message-animation {
+  position: fixed;
+  bottom: 120px; 
+  right: 15px; 
+  background-color: #fbbf24; 
+  color: #1a1919;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: verticalBounce 2s infinite;
+  text-align: center;
+}
+
+.cart-message-animation::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #fbbf24; 
+}
+
+
+@keyframes verticalBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+</style>
